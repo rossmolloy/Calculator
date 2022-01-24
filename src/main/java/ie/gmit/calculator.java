@@ -9,6 +9,7 @@ public class calculator {
         this.secondNumber = secondNumber;
     }
 
+    // this method will add two numbers
     public int add() {
         return firstNumber + secondNumber;
     }
