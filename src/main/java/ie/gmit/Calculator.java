@@ -1,10 +1,10 @@
 package ie.gmit;
 
-public class calculator {
+public class Calculator {
     private int firstNumber;
     private int secondNumber;
 
-    public calculator(int firstNumber, int secondNumber) {
+    public Calculator(int firstNumber, int secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
     }
