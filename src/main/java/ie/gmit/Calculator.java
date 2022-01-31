@@ -21,4 +21,8 @@ public class Calculator {
     public float divide() {
         return (float) firstNumber / secondNumber;
     }
+
+    public int multiply() {
+        return firstNumber * secondNumber;
+    }
 }
