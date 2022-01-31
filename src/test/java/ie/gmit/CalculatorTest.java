@@ -19,4 +19,9 @@ public class CalculatorTest {
     void testSubtract() {
         assertEquals(5, calculator.subtract());
     }
+
+    @Test
+    void testDivide() {
+        assertEquals(1.5, calculator.divide());
+    }
 }

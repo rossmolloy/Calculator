@@ -17,4 +17,8 @@ public class Calculator {
     public int subtract() {
         return firstNumber - secondNumber;
     }
+
+    public float divide() {
+        return (float) firstNumber / secondNumber;
+    }
 }
