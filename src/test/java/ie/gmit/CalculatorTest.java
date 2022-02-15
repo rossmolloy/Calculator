@@ -57,6 +57,18 @@ public class CalculatorTest {
     }
 
     @Test
+    void testDivideError1() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.divide(1001, 10); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testDivideError2() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.divide(15, 1001); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
     void testMultiply() {
         assertEquals(150, calculator.multiply(15, 10));
     }
