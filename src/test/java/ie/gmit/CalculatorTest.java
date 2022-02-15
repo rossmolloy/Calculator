@@ -40,6 +40,18 @@ public class CalculatorTest {
     }
 
     @Test
+    void testSubtractError1() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.subtract(1001, 10); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testSubtractError2() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.subtract(15, 1001); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
     void testDivide() {
         assertEquals(1.5, calculator.divide(15, 10));
     }
