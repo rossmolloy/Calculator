@@ -1,11 +1,18 @@
 package ie.gmit;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
-    private final Calculator calculator = new Calculator();
+    private Calculator calculator;
+
+    @BeforeEach
+    void setup() {
+        calculator = new Calculator();
+    }
 
     @Test
     void justAnExample() {}
@@ -13,6 +20,18 @@ public class CalculatorTest {
     @Test
     void testAdd() {
         assertEquals(25, calculator.add(15, 10));
+    }
+
+    @Test
+    void testAddError1() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(1001, 10); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testAddError2() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(15, 1001); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
     }
 
     @Test
