@@ -23,13 +23,25 @@ public class CalculatorTest {
     }
 
     @Test
-    void testAddError1() {
+    void testAddErrorFirstBelow0() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(-1, 10); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testAddErrorSecondBelow0() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(15, -1); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testAddErrorFirstAbove1000() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(1001, 10); });
         assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
     }
 
     @Test
-    void testAddError2() {
+    void testAddErrorSecondAbove1000() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.add(15, 1001); });
         assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
     }
