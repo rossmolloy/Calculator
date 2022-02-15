@@ -110,13 +110,25 @@ public class CalculatorTest {
     }
 
     @Test
-    void testMultiplyError1() {
+    void testMultiplyErrorFirstBelow0() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.multiply(-1, 10); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testMultiplyErrorSecondBelow0() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.multiply(15, -1); });
+        assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
+    }
+
+    @Test
+    void testMultiplyErrorFirstAbove1000() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.multiply(1001, 10); });
         assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
     }
 
     @Test
-    void testMultiplyError2() {
+    void testMultiplyErrorSecondAbove1000() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> { calculator.multiply(15, 1001); });
         assertEquals("Number(s) must be between 0 and 1000", exception.getMessage());
     }
