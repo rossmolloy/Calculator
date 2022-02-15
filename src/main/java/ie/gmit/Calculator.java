@@ -1,28 +1,38 @@
 package ie.gmit;
 
 public class Calculator {
-    private int firstNumber;
-    private int secondNumber;
-
-    public Calculator(int firstNumber, int secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
-    }
+    public Calculator() {}
 
     // this method will add two numbers
-    public int add() {
-        return firstNumber + secondNumber;
+    public int add(int firstNumber, int secondNumber) {
+        if (firstNumber >= 0 && secondNumber >= 0 && firstNumber <= 1000 && secondNumber <= 1000) {
+            return firstNumber + secondNumber;
+        } else {
+            throw new IllegalArgumentException("Number(s) must be between 0 and 1000");
+        }
     }
 
-    public int subtract() {
-        return firstNumber - secondNumber;
+    public int subtract(int firstNumber, int secondNumber) {
+        if (firstNumber >= 0 && secondNumber >= 0 && firstNumber <= 1000 && secondNumber <= 1000) {
+            return firstNumber - secondNumber;
+        } else {
+            throw new IllegalArgumentException("Number(s) must be between 0 and 1000");
+        }
     }
 
-    public float divide() {
-        return (float) firstNumber / secondNumber;
+    public float divide(int firstNumber, int secondNumber) {
+        if (firstNumber >= 0 && secondNumber >= 0 && firstNumber <= 1000 && secondNumber <= 1000) {
+            return (float) firstNumber / secondNumber;
+        } else {
+            throw new IllegalArgumentException("Number(s) must be between 0 and 1000");
+        }
     }
 
-    public int multiply() {
-        return firstNumber * secondNumber;
+    public int multiply(int firstNumber, int secondNumber) {
+        if (firstNumber >= 0 && secondNumber >= 0 && firstNumber <= 1000 && secondNumber <= 1000) {
+            return firstNumber * secondNumber;
+        } else {
+            throw new IllegalArgumentException("Number(s) must be between 0 and 1000");
+        }
     }
 }
